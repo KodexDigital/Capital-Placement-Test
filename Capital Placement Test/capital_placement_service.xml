@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Capital Placement Test</name>
+    </assembly>
+    <members>
+        <member name="M:cosmo_db_test.Filters.ApiAuthenticationHeaderFilter.#ctor(Microsoft.Extensions.Options.IOptionsSnapshot{cosmo_db_test.Settings.HeaderAuthentication})">
+            <summary>
+            Header filer constructor
+            </summary>
+            <param name="headerAuthentication"></param>
+        </member>
+        <member name="M:cosmo_db_test.Filters.ApiAuthenticationHeaderFilter.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            Action to be executed on load
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="P:cosmo_db_test.Services.Implementations.ApplicationFormService.Table">
+            <summary>
+            Database container name alia Table
+            </summary>
+        </member>
+        <member name="P:cosmo_db_test.Services.Implementations.ApplicationFormService.PartitionKey">
+            <summary>
+            Unique prorty for getting container items.
+            This is should not be changes by any means
+            </summary>
+        </member>
+        <member name="P:cosmo_db_test.Services.Implementations.ProgramService.Table">
+            <summary>
+            Database container name alia Table
+            </summary>
+        </member>
+        <member name="P:cosmo_db_test.Services.Implementations.ProgramService.PartitionKey">
+            <summary>
+            Unique prorty for getting container items.
+            This is should not be changes by any means
+            </summary>
+        </member>
+        <member name="P:cosmo_db_test.Services.Implementations.QuestionService.Table">
+            <summary>
+            Database container name alia Table
+            </summary>
+        </member>
+        <member name="P:cosmo_db_test.Services.Implementations.QuestionService.PartitionKey">
+            <summary>
+            Unique prorty for getting container items.
+            This is should not be changes by any means
+            </summary>
+        </member>
+        <member name="P:cosmo_db_test.Services.Implementations.UserQuestionAndAnswerService.Table">
+            <summary>
+            Database container name alia Table
+            </summary>
+        </member>
+        <member name="P:cosmo_db_test.Services.Implementations.UserQuestionAndAnswerService.PartitionKey">
+            <summary>
+            Unique prorty for getting container items.
+            This is should not be changes by any means
+            </summary>
+        </member>
+    </members>
+</doc>
