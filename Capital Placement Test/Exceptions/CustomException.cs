@@ -1,4 +1,4 @@
-﻿namespace cosmo_db_test.Exceptions
+﻿namespace Capital_Placement_Test.Exceptions
 {
     public class CustomException : Exception
     {

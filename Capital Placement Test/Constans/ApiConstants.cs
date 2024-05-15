@@ -1,4 +1,4 @@
-﻿namespace cosmo_db_test.Constants
+﻿namespace Capital_Placement_Test.Constants
 {
     public static class ApiConstants
     {

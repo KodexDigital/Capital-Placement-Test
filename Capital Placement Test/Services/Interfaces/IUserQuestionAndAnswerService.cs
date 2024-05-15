@@ -1,7 +1,7 @@
-﻿using cosmo_db_test.Models;
-using cosmo_db_test.Response;
+﻿using Capital_Placement_Test.Models;
+using Capital_Placement_Test.Response;
 
-namespace cosmo_db_test.Services.Interfaces
+namespace Capital_Placement_Test.Services.Interfaces
 {
     public interface IUserQuestionAndAnswerService
     {

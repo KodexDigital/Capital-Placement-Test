@@ -1,4 +1,4 @@
-﻿namespace cosmo_db_test.Response
+﻿namespace Capital_Placement_Test.Response
 {
     public class ErrorResponse
     {

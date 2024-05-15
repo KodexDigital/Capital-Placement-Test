@@ -1,4 +1,4 @@
-﻿namespace cosmo_db_test.Models
+﻿namespace Capital_Placement_Test.Models
 {
     public class BaseModel
     {

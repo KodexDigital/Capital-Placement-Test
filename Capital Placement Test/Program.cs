@@ -1,4 +1,4 @@
-using cosmo_db_test.ServiceInjections;
+using Capital_Placement_Test.ServiceInjections;
 
 var builder = WebApplication.CreateBuilder(args);
 

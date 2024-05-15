@@ -1,12 +1,12 @@
-﻿using cosmo_db_test.DTOs.RequestDto;
-using cosmo_db_test.DTOs.ResponseDto;
-using cosmo_db_test.Filters;
-using cosmo_db_test.Models;
-using cosmo_db_test.Response;
-using cosmo_db_test.Services.Interfaces;
+﻿using Capital_Placement_Test.DTOs.RequestDto;
+using Capital_Placement_Test.DTOs.ResponseDto;
+using Capital_Placement_Test.Filters;
+using Capital_Placement_Test.Models;
+using Capital_Placement_Test.Response;
+using Capital_Placement_Test.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace cosmo_db_test.Controllers
+namespace Capital_Placement_Test.Controllers
 {
     /// <summary>
     /// Candidate application controleer

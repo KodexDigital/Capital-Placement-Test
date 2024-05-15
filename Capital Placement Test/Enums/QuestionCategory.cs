@@ -1,4 +1,4 @@
-﻿namespace cosmo_db_test.Enums
+﻿namespace Capital_Placement_Test.Enums
 {
     public enum QuestionCategory
     {

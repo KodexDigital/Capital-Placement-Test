@@ -1,6 +1,6 @@
-﻿using cosmo_db_test.Enums;
+﻿using Capital_Placement_Test.Enums;
 
-namespace cosmo_db_test.Models
+namespace Capital_Placement_Test.Models
 {
     public class QuestionType : BaseModel
     {

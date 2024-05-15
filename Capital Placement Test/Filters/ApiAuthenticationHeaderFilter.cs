@@ -1,12 +1,12 @@
-﻿using cosmo_db_test.Response;
+﻿using Capital_Placement_Test.Response;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Microsoft.Extensions.Options;
-using cosmo_db_test.Settings;
-using cosmo_db_test.Constants;
+using Capital_Placement_Test.Settings;
+using Capital_Placement_Test.Constants;
 
-namespace cosmo_db_test.Filters
+namespace Capital_Placement_Test.Filters
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class ApiAuthenticationHeaderFilter : Attribute, IAsyncActionFilter

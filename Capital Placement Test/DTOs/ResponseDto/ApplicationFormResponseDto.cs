@@ -1,7 +1,7 @@
-﻿using cosmo_db_test.DTOs.RequestDto;
-using cosmo_db_test.Models;
+﻿using Capital_Placement_Test.DTOs.RequestDto;
+using Capital_Placement_Test.Models;
 
-namespace cosmo_db_test.DTOs.ResponseDto
+namespace Capital_Placement_Test.DTOs.ResponseDto
 {
     public class ApplicationFormResponseDto : ApplicationForm
     {

@@ -1,12 +1,12 @@
-﻿using cosmo_db_test.DTOs.RequestDto;
-using cosmo_db_test.DTOs.ResponseDto;
-using cosmo_db_test.Exceptions;
-using cosmo_db_test.Models;
-using cosmo_db_test.Response;
-using cosmo_db_test.Services.Interfaces;
+﻿using Capital_Placement_Test.DTOs.RequestDto;
+using Capital_Placement_Test.DTOs.ResponseDto;
+using Capital_Placement_Test.Exceptions;
+using Capital_Placement_Test.Models;
+using Capital_Placement_Test.Response;
+using Capital_Placement_Test.Services.Interfaces;
 using Microsoft.Azure.Cosmos;
 
-namespace cosmo_db_test.Services.Implementations
+namespace Capital_Placement_Test.Services.Implementations
 {
     public class ApplicationFormService : IApplicationFormService
     {

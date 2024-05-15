@@ -1,8 +1,8 @@
-﻿using cosmo_db_test.Constants;
+﻿using Capital_Placement_Test.Constants;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace cosmo_db_test.Filters
+namespace Capital_Placement_Test.Filters
 {
     public class SwaggerHeaderFilter : IOperationFilter
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Azure.Cosmos;
 
-namespace cosmo_db_test.Services
+namespace Capital_Placement_Test.Services
 {
     public interface IDatabaseConnection
     {

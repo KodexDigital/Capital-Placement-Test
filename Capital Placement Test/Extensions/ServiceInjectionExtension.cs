@@ -1,13 +1,13 @@
-﻿using cosmo_db_test.Filters;
-using cosmo_db_test.Services;
-using cosmo_db_test.Services.Implementations;
-using cosmo_db_test.Services.Interfaces;
-using cosmo_db_test.Settings;
+﻿using Capital_Placement_Test.Filters;
+using Capital_Placement_Test.Services;
+using Capital_Placement_Test.Services.Implementations;
+using Capital_Placement_Test.Services.Interfaces;
+using Capital_Placement_Test.Settings;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
 
-namespace cosmo_db_test.ServiceInjections
+namespace Capital_Placement_Test.ServiceInjections
 {
     public static class ServiceInjectionExtension
     {

@@ -4,25 +4,25 @@
         <name>Capital Placement Test</name>
     </assembly>
     <members>
-        <member name="T:cosmo_db_test.Controllers.ApplicationsController">
+        <member name="T:Capital_Placement_Test.Controllers.ApplicationsController">
             <summary>
             Candidate application controleer
             </summary>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ApplicationsController.#ctor(cosmo_db_test.Services.Interfaces.IApplicationFormService)">
+        <member name="M:Capital_Placement_Test.Controllers.ApplicationsController.#ctor(Capital_Placement_Test.Services.Interfaces.IApplicationFormService)">
             <summary>
             Application contructor
             </summary>
             <param name="applicationService"></param>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ApplicationsController.Apply(cosmo_db_test.DTOs.RequestDto.ApplicationFormDto)">
+        <member name="M:Capital_Placement_Test.Controllers.ApplicationsController.Apply(Capital_Placement_Test.DTOs.RequestDto.ApplicationFormDto)">
             <summary>
             Candidate apply for program
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ApplicationsController.UpdateApplication(System.String,cosmo_db_test.DTOs.RequestDto.ApplicationFormDto)">
+        <member name="M:Capital_Placement_Test.Controllers.ApplicationsController.UpdateApplication(System.String,Capital_Placement_Test.DTOs.RequestDto.ApplicationFormDto)">
             <summary>
             Update application
             </summary>
@@ -30,38 +30,38 @@
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ApplicationsController.GetAllApplications">
+        <member name="M:Capital_Placement_Test.Controllers.ApplicationsController.GetAllApplications">
             <summary>
             Get all applications
             </summary>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ApplicationsController.GetSingleCandidateApplication(System.String)">
+        <member name="M:Capital_Placement_Test.Controllers.ApplicationsController.GetSingleCandidateApplication(System.String)">
             <summary>
             Get single application
             </summary>
             <param name="applicationId">Application id</param>
             <returns></returns>
         </member>
-        <member name="T:cosmo_db_test.Controllers.ProgramsController">
+        <member name="T:Capital_Placement_Test.Controllers.ProgramsController">
             <summary>
             Porgram setup controller by employee
             </summary>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ProgramsController.#ctor(cosmo_db_test.Services.Interfaces.IProgramService)">
+        <member name="M:Capital_Placement_Test.Controllers.ProgramsController.#ctor(Capital_Placement_Test.Services.Interfaces.IProgramService)">
             <summary>
             Program constructor
             </summary>
             <param name="programApplication"></param>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ProgramsController.CreateProgram(cosmo_db_test.DTOs.RequestDto.CreateProgramDto)">
+        <member name="M:Capital_Placement_Test.Controllers.ProgramsController.CreateProgram(Capital_Placement_Test.DTOs.RequestDto.CreateProgramDto)">
             <summary>
             Create program for canditate application
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ProgramsController.UpdateProgram(System.String,cosmo_db_test.DTOs.RequestDto.CreateProgramDto)">
+        <member name="M:Capital_Placement_Test.Controllers.ProgramsController.UpdateProgram(System.String,Capital_Placement_Test.DTOs.RequestDto.CreateProgramDto)">
             <summary>
             Update a program
             </summary>
@@ -69,38 +69,38 @@
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ProgramsController.GetAllPrograms">
+        <member name="M:Capital_Placement_Test.Controllers.ProgramsController.GetAllPrograms">
             <summary>
             Get all programs
             </summary>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.ProgramsController.GetSingleCandidateProgram(System.String)">
+        <member name="M:Capital_Placement_Test.Controllers.ProgramsController.GetSingleCandidateProgram(System.String)">
             <summary>
             Get a single program
             </summary>
             <param name="programId">Program id</param>
             <returns></returns>
         </member>
-        <member name="T:cosmo_db_test.Controllers.QuestionsController">
+        <member name="T:Capital_Placement_Test.Controllers.QuestionsController">
             <summary>
             Employee question setup
             </summary>
         </member>
-        <member name="M:cosmo_db_test.Controllers.QuestionsController.#ctor(cosmo_db_test.Services.Interfaces.IQuestionService)">
+        <member name="M:Capital_Placement_Test.Controllers.QuestionsController.#ctor(Capital_Placement_Test.Services.Interfaces.IQuestionService)">
             <summary>
             Question setup constructor
             </summary>
             <param name="questionService"></param>
         </member>
-        <member name="M:cosmo_db_test.Controllers.QuestionsController.CreateQuestion(System.Collections.Generic.List{cosmo_db_test.DTOs.RequestDto.QuestionTypeDto})">
+        <member name="M:Capital_Placement_Test.Controllers.QuestionsController.CreateQuestion(System.Collections.Generic.List{Capital_Placement_Test.DTOs.RequestDto.QuestionTypeDto})">
             <summary>
             Create applcation questions
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.QuestionsController.UpdateQuestion(System.String,cosmo_db_test.DTOs.RequestDto.QuestionTypeDto)">
+        <member name="M:Capital_Placement_Test.Controllers.QuestionsController.UpdateQuestion(System.String,Capital_Placement_Test.DTOs.RequestDto.QuestionTypeDto)">
             <summary>
             Update question
             </summary>
@@ -108,33 +108,33 @@
             <param name="request"></param>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.QuestionsController.GetAllQuestions">
+        <member name="M:Capital_Placement_Test.Controllers.QuestionsController.GetAllQuestions">
             <summary>
             Get all questions
             </summary>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.QuestionsController.GetSingleQuestionType(System.String)">
+        <member name="M:Capital_Placement_Test.Controllers.QuestionsController.GetSingleQuestionType(System.String)">
             <summary>
             Get single question by question id
             </summary>
             <param name="questionId">Question id</param>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Controllers.QuestionsController.GetSingleQuestionTypeByType(cosmo_db_test.Enums.QuestionCategory)">
+        <member name="M:Capital_Placement_Test.Controllers.QuestionsController.GetSingleQuestionTypeByType(Capital_Placement_Test.Enums.QuestionCategory)">
             <summary>
             Get question by the question type
             </summary>
             <param name="questionType">Question type</param>
             <returns></returns>
         </member>
-        <member name="M:cosmo_db_test.Filters.ApiAuthenticationHeaderFilter.#ctor(Microsoft.Extensions.Options.IOptionsSnapshot{cosmo_db_test.Settings.HeaderAuthentication})">
+        <member name="M:Capital_Placement_Test.Filters.ApiAuthenticationHeaderFilter.#ctor(Microsoft.Extensions.Options.IOptionsSnapshot{Capital_Placement_Test.Settings.HeaderAuthentication})">
             <summary>
             Header filer constructor
             </summary>
             <param name="headerAuthentication"></param>
         </member>
-        <member name="M:cosmo_db_test.Filters.ApiAuthenticationHeaderFilter.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+        <member name="M:Capital_Placement_Test.Filters.ApiAuthenticationHeaderFilter.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
             <summary>
             Action to be executed on load
             </summary>
@@ -142,45 +142,45 @@
             <param name="next"></param>
             <returns></returns>
         </member>
-        <member name="P:cosmo_db_test.Services.Implementations.ApplicationFormService.Table">
+        <member name="P:Capital_Placement_Test.Services.Implementations.ApplicationFormService.Table">
             <summary>
             Database container name alia Table
             </summary>
         </member>
-        <member name="P:cosmo_db_test.Services.Implementations.ApplicationFormService.PartitionKey">
+        <member name="P:Capital_Placement_Test.Services.Implementations.ApplicationFormService.PartitionKey">
             <summary>
             Unique prorty for getting container items.
             This is should not be changes by any means
             </summary>
         </member>
-        <member name="P:cosmo_db_test.Services.Implementations.ProgramService.Table">
+        <member name="P:Capital_Placement_Test.Services.Implementations.ProgramService.Table">
             <summary>
             Database container name alia Table
             </summary>
         </member>
-        <member name="P:cosmo_db_test.Services.Implementations.ProgramService.PartitionKey">
+        <member name="P:Capital_Placement_Test.Services.Implementations.ProgramService.PartitionKey">
             <summary>
             Unique prorty for getting container items.
             This is should not be changes by any means
             </summary>
         </member>
-        <member name="P:cosmo_db_test.Services.Implementations.QuestionService.Table">
+        <member name="P:Capital_Placement_Test.Services.Implementations.QuestionService.Table">
             <summary>
             Database container name alia Table
             </summary>
         </member>
-        <member name="P:cosmo_db_test.Services.Implementations.QuestionService.PartitionKey">
+        <member name="P:Capital_Placement_Test.Services.Implementations.QuestionService.PartitionKey">
             <summary>
             Unique prorty for getting container items.
             This is should not be changes by any means
             </summary>
         </member>
-        <member name="P:cosmo_db_test.Services.Implementations.UserQuestionAndAnswerService.Table">
+        <member name="P:Capital_Placement_Test.Services.Implementations.UserQuestionAndAnswerService.Table">
             <summary>
             Database container name alia Table
             </summary>
         </member>
-        <member name="P:cosmo_db_test.Services.Implementations.UserQuestionAndAnswerService.PartitionKey">
+        <member name="P:Capital_Placement_Test.Services.Implementations.UserQuestionAndAnswerService.PartitionKey">
             <summary>
             Unique prorty for getting container items.
             This is should not be changes by any means

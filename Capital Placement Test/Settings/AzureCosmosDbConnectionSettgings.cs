@@ -1,4 +1,4 @@
-﻿namespace cosmo_db_test.Settings
+﻿namespace Capital_Placement_Test.Settings
 {
     public class AzureCosmosDbConnectionSettgings
     {

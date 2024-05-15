@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace cosmo_db_test.DTOs.RequestDto
+namespace Capital_Placement_Test.DTOs.RequestDto
 {
     public class CreateProgramDto
     {

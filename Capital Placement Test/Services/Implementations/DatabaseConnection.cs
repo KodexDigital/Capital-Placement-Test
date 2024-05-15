@@ -1,8 +1,8 @@
-﻿using cosmo_db_test.Settings;
+﻿using Capital_Placement_Test.Settings;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Extensions.Options;
 
-namespace cosmo_db_test.Services.Implementations
+namespace Capital_Placement_Test.Services.Implementations
 {
     public class DatabaseConnection : IDatabaseConnection
     {

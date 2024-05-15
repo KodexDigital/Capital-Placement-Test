@@ -1,7 +1,7 @@
-﻿using cosmo_db_test.Enums;
+﻿using Capital_Placement_Test.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace cosmo_db_test.DTOs.RequestDto
+namespace Capital_Placement_Test.DTOs.RequestDto
 {
     public class ApplicationFormDto
     {
