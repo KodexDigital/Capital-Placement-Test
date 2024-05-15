@@ -17,7 +17,6 @@
     <Folder Include="DTOs\" />
     <Folder Include="Enums\" />
     <Folder Include="Filters\" />
-    <Folder Include="Models\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Extensions\" />
     <Folder Include="Settings\" />
