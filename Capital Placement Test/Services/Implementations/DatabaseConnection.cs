@@ -18,9 +18,18 @@ namespace Capital_Placement_Test.Services.Implementations
             var _database = dbSettings.DbName!;
             var containerName = $"{table}s";
 
-            using CosmosClient client = new( accountEndpoint: url, authKeyOrResourceToken: authToken);
+            var options = new CosmosClientOptions()
+            {
+                SerializerOptions = new CosmosSerializationOptions
+                {
+                    PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase,
+                    IgnoreNullValues = true
+                }
+            };
+
+            var client = new CosmosClient( accountEndpoint: url, authKeyOrResourceToken: authToken, options);
             Database database = await client.CreateDatabaseIfNotExistsAsync(id: _database, throughput: 400);
-            await database.CreateContainerIfNotExistsAsync(id: containerName, partitionKeyPath: partitionKey);
+            await database.CreateContainerIfNotExistsAsync(id: containerName, partitionKeyPath: $"/{partitionKey}");
 
             Container container = client.GetContainer(dbSettings.DbName!, containerName);
 

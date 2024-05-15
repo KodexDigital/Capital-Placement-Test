@@ -22,7 +22,7 @@ namespace Capital_Placement_Test.Services.Implementations
         /// Unique prorty for getting container items.
         /// This is should not be changes by any means
         /// </summary>
-        protected internal string? PartitionKey { get; } = "/id";
+        protected internal string? PartitionKey { get; set; } = "clientKey";
         public ApplicationFormService(IDatabaseConnection databaseConnection, IQuestionService questionService, IUserQuestionAndAnswerService questionAndAnswerService)
         {
             this.databaseConnection = databaseConnection;
@@ -50,7 +50,8 @@ namespace Capital_Placement_Test.Services.Implementations
                     DateOfBirth = dto.DateOfBirth,
                     IdentityNumber = dto.IdentityNumber
                 };
-                var data = await container.Item1.CreateItemAsync(application, new PartitionKey(PartitionKey));
+
+                var data = await container.Item1.CreateItemAsync(application);
                 if(data != null)
                 {
                     foreach (var q in dto.AdditionalQuestions!)
@@ -117,7 +118,7 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                var application = await container.Item1.ReadItemAsync<ApplicationForm>(id, new PartitionKey(PartitionKey));
+                var application = await container.Item1.ReadItemAsync<ApplicationForm>(id, new PartitionKey(id));
                 response.Status = application != null;
                 response.Message = application != null ? "Application fetched" : "No record found";
                 response.Data = application!.Resource;
@@ -137,7 +138,7 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                var res = await container.Item1.ReadItemAsync<ApplicationForm>(id, new PartitionKey(PartitionKey));
+                var res = await container.Item1.ReadItemAsync<ApplicationForm>(id, new PartitionKey(id));
 
                 //Get Existing Item
                 var existingItem = res.Resource;
@@ -155,7 +156,7 @@ namespace Capital_Placement_Test.Services.Implementations
                 existingItem.Gender = dto.Gender;
                 existingItem.IdentityNumber = dto.IdentityNumber;
                 existingItem.ModifiedAt = DateTime.Now;
-                var updateRes = await container.Item1.ReplaceItemAsync(existingItem, id, new PartitionKey(PartitionKey));
+                var updateRes = await container.Item1.ReplaceItemAsync(existingItem, id, new PartitionKey(id));
                 if (updateRes != null)
                 {
                     foreach (var q in dto.AdditionalQuestions!)

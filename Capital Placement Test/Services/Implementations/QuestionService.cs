@@ -20,7 +20,7 @@ namespace Capital_Placement_Test.Services.Implementations
         /// Unique prorty for getting container items.
         /// This is should not be changes by any means
         /// </summary>
-        protected internal string? PartitionKey { get; } = "/id";
+        protected internal string? PartitionKey { get; set; } = "clientKey";
         public QuestionService(IDatabaseConnection databaseConnection)
         {
             this.databaseConnection = databaseConnection;
@@ -43,7 +43,7 @@ namespace Capital_Placement_Test.Services.Implementations
                     {
                         Type = q.Type,
                         Question = q.Question
-                    }, new PartitionKey(PartitionKey));
+                    });
                     if(data != null)
                     {
                         submittedData++;
@@ -104,7 +104,7 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                var question = await container.Item1.ReadItemAsync<QuestionType>(id, new PartitionKey(PartitionKey));
+                var question = await container.Item1.ReadItemAsync<QuestionType>(id, new PartitionKey(id));
                 return new ResponseHandler<QuestionType>
                 {
                     Status = question.Resource != null,
@@ -122,12 +122,14 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                var _question = await container.Item1.ReadItemAsync<QuestionType>(question.Trim(), new PartitionKey(PartitionKey));
+                var queryable = container.Item1.GetItemLinqQueryable<QuestionType>(true);
+                queryable = (IOrderedQueryable<QuestionType>)queryable.Where(item => item.Question!.ToLower() == question.ToLower());
+                var _question = queryable.ToArray().FirstOrDefault();
                 return new ResponseHandler<QuestionType>
                 {
-                    Status = _question.Resource != null,
-                    Message = _question.Resource != null ? "Question fetched" : "No record found",
-                    Data = _question.Resource
+                    Status = _question != null,
+                    Message = _question != null ? "Question fetched" : "No record found",
+                    Data = _question
                 };
             }
             catch (Exception)
@@ -140,12 +142,14 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                var question = await container.Item1.ReadItemAsync<QuestionType>(questionType.ToString(), new PartitionKey(PartitionKey));
+                var queryable = container.Item1.GetItemLinqQueryable<QuestionType>(true);
+                queryable = (IOrderedQueryable<QuestionType>)queryable.Where(item => item.Type.Equals(questionType));
+                var question = queryable.ToArray().FirstOrDefault();
                 return new ResponseHandler<QuestionType>
                 {
-                    Status = question.Resource != null,
-                    Message = question.Resource != null ? "Question fetched" : "No record found",
-                    Data = question.Resource
+                    Status = question != null,
+                    Message = question != null ? "Question fetched" : "No record found",
+                    Data = question
                 };
             }
             catch (Exception)
@@ -160,7 +164,7 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                var res = await container.Item1.ReadItemAsync<QuestionType>(id, new PartitionKey(PartitionKey));
+                var res = await container.Item1.ReadItemAsync<QuestionType>(id, new PartitionKey(id));
 
                 //Get Existing Item
                 var existingItem = res.Resource;
@@ -171,7 +175,7 @@ namespace Capital_Placement_Test.Services.Implementations
                 existingItem.Type = dto.Type;
                 existingItem.Question = dto.Question;
                 existingItem.ModifiedAt = DateTime.Now;
-                var updateRes = await container.Item1.ReplaceItemAsync(existingItem, id, new PartitionKey(PartitionKey));
+                var updateRes = await container.Item1.ReplaceItemAsync(existingItem, id, new PartitionKey(id));
                 response.Status = updateRes.Resource != null;
                 response.Message = updateRes.Resource != null ? "Question updated successfully" : "Unable to update record";
                 response.Data = updateRes.Resource;

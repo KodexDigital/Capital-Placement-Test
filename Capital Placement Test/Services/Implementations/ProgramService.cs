@@ -19,7 +19,7 @@ namespace Capital_Placement_Test.Services.Implementations
         /// Unique prorty for getting container items.
         /// This is should not be changes by any means
         /// </summary>
-        protected internal string? PartitionKey { get; } = "/id";
+        protected internal string? PartitionKey { get; set; } = "clientKey";
         public ProgramService(IDatabaseConnection databaseConnection)
         {
             this.databaseConnection = databaseConnection;            
@@ -37,7 +37,8 @@ namespace Capital_Placement_Test.Services.Implementations
                     Title = dto.Title,
                     Description = dto.Description
                 };
-                var data = await container.Item1.CreateItemAsync(program, new PartitionKey(PartitionKey));
+
+                var data = await container.Item1.CreateItemAsync(program);
                 response.Status = data != null;
                 response.Message = data != null ? "Program created successfully" : "Unable to create program";
                 response.Data = data!.Resource;
@@ -88,7 +89,7 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                ItemResponse<CandidateProgram> program = await container.Item1.ReadItemAsync<CandidateProgram>(id, new PartitionKey(PartitionKey));
+                ItemResponse<CandidateProgram> program = await container.Item1.ReadItemAsync<CandidateProgram>(id, new PartitionKey(id));
                 response.Status = program.Resource != null;
                 response.Message = program.Resource != null? "Program fetched" : "No record found";
                 response.Data = program.Resource;
@@ -108,7 +109,7 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                ItemResponse<CandidateProgram> res = await container.Item1.ReadItemAsync<CandidateProgram>(id, new PartitionKey(PartitionKey));
+                ItemResponse<CandidateProgram> res = await container.Item1.ReadItemAsync<CandidateProgram>(id, new PartitionKey(id));
                 
                 //Get Existing Item
                 var existingItem = res.Resource;
@@ -119,7 +120,7 @@ namespace Capital_Placement_Test.Services.Implementations
                 existingItem.Title = dto.Title;
                 existingItem.Description = dto.Description;
                 existingItem.ModifiedAt = DateTime.Now;
-                var updateRes = await container.Item1.ReplaceItemAsync(existingItem, id, new PartitionKey(PartitionKey));
+                var updateRes = await container.Item1.ReplaceItemAsync(existingItem, id, new PartitionKey(id));
                 response.Status = updateRes.Resource != null;
                 response.Message = updateRes.Resource != null ? "Program updated successfully" : "Unable to update record";
                 response.Data = updateRes.Resource;

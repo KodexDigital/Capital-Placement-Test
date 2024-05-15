@@ -18,7 +18,7 @@ namespace Capital_Placement_Test.Services.Implementations
         /// Unique prorty for getting container items.
         /// This is should not be changes by any means
         /// </summary>
-        protected internal string? PartitionKey { get; } = "/id";
+        protected internal string? PartitionKey { get; set; } = "clientKey";
         public UserQuestionAndAnswerService(IDatabaseConnection databaseConnection)
         {
             this.databaseConnection = databaseConnection;
@@ -29,7 +29,7 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                var data = await container.Item1.CreateItemAsync(questionAndAnswer, new PartitionKey(PartitionKey));
+                var data = await container.Item1.CreateItemAsync(questionAndAnswer);
                 return new ResponseHandler<UserQuestionAndAnswer>
                 {
                     Status = data != null,
@@ -49,7 +49,7 @@ namespace Capital_Placement_Test.Services.Implementations
             try
             {
                 var container = await GetContainer();
-                var res = await container.Item1.ReadItemAsync<UserQuestionAndAnswer>(questionAndAnswer.Id, new PartitionKey(PartitionKey));
+                var res = await container.Item1.ReadItemAsync<UserQuestionAndAnswer>(questionAndAnswer.Id, new PartitionKey(questionAndAnswer.Id));
 
                 //Get Existing Item
                 var existingItem = res.Resource;
@@ -60,7 +60,7 @@ namespace Capital_Placement_Test.Services.Implementations
                 existingItem.QuestionTypeId = questionAndAnswer.QuestionTypeId;
                 existingItem.ApplicationFormId = questionAndAnswer.ApplicationFormId;
                 existingItem.ModifiedAt = DateTime.Now;
-                var updateRes = await container.Item1.ReplaceItemAsync(existingItem, questionAndAnswer.QuestionTypeId, new PartitionKey(PartitionKey));
+                var updateRes = await container.Item1.ReplaceItemAsync(existingItem, questionAndAnswer.QuestionTypeId, new PartitionKey(questionAndAnswer.Id));
                 response.Status = updateRes.Resource != null;
                 response.Message = updateRes.Resource != null ? "Question answer updated successfully" : "Unable to update record";
                 response.Data = updateRes.Resource;
